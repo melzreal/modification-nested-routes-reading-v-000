@@ -3994,3 +3994,23 @@ Processing by PostsController#create as HTML
   [1m[35m (2.2ms)[0m  commit transaction
 Redirected to http://165.227.133.20:38458/posts/17
 Completed 302 Found in 14ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/posts/17" for 109.180.44.32 at 2019-02-10 12:38:20 +0000
+Cannot render console from 109.180.44.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 17]]
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered posts/show.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 27ms (Views: 24.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/authors/5/posts/17/edit" for 109.180.44.32 at 2019-02-10 12:38:23 +0000
+Cannot render console from 109.180.44.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#edit as HTML
+  Parameters: {"author_id"=>"5", "id"=>"17"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 17]]
+  Rendered posts/_form.html.erb (1.5ms)
+  Rendered posts/edit.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.1ms)
